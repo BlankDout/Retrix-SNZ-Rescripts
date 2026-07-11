@@ -46,6 +46,15 @@ local function setupHumanoid(h)
 			
 			if head then
 				local health = healthBase:Clone()
+				local ShowNamesThroughWalls = workspace:GetAttribute("SeeNamesThroughWalls")
+				
+				if ShowNamesThroughWalls then
+					health.AlwaysOnTop = true
+				else
+					health.AlwaysOnTop = false
+				end
+				
+				
 				local playerName = health:WaitForChild("PlayerName")
 				local redBar = health:WaitForChild("RedBar")
 				local greenBar = redBar:WaitForChild("GreenBar")
